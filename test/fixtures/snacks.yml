@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  snack: MyString
+  time: 2021-03-04 20:41:33
+  description: MyText
+  diet: one
+
+two:
+  snack: MyString
+  time: 2021-03-04 20:41:33
+  description: MyText
+  diet: two
