@@ -34,6 +34,22 @@
   <div class="field">
     <%= form.label :ideal_weight %>
     <%= form.text_field :ideal_weight %>
+    <br>
+
+    <%= link_to_add_association 'Adicionar Refeição', form, :snacks, 
+    'data-association-insertion-node' => "#snacks ol", 
+    'data-association-insertion-method' => "append" %>
+    
+    <hr/>
+     <br>
+    <fieldset id="snacks">
+      <ol> 
+        <%= form.fields_for :snacks do |snack| %>
+         <%= render partial: "snack_fields", locals: { f: snack } %> 
+         <% end %> 
+        </ol> 
+    </fieldset>
+
   </div>
 
   <div class="actions">
