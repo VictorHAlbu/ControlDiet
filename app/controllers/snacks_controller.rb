@@ -1,6 +1,6 @@
 class SnacksController < ApplicationController
   before_action :set_snack, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+
   # GET /snacks or /snacks.json
   def index
     @snacks = Snack.all

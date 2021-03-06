@@ -1,35 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to new_diet_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Diet
+  <% end %>
+  <h1>Listing diets</h1>
+</div>
 
-<h1>Diets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Start date</th>
-      <th>Final date</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>Ideal weight</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @diets.each do |diet| %>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= diet.start_date %></td>
-        <td><%= diet.final_date %></td>
-        <td><%= diet.weight %></td>
-        <td><%= diet.height %></td>
-        <td><%= diet.ideal_weight %></td>
-        <td><%= link_to 'Show', diet %></td>
-        <td><%= link_to 'Edit', edit_diet_path(diet) %></td>
-        <td><%= link_to 'Destroy', diet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Start date</th>
+            <th>Final date</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Ideal weight</th>
+            <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Diet', new_diet_path %>
+    <tbody>
+      <% @diets.each do |diet| %>
+        <%= content_tag :tr, id: dom_id(diet), class: dom_class(diet) do %>
+                      <td><%= diet.start_date %></td>
+                      <td><%= diet.final_date %></td>
+                      <td><%= diet.weight %></td>
+                      <td><%= diet.height %></td>
+                      <td><%= diet.ideal_weight %></td>
+                    <td><%= link_to 'Show', diet %></td>
+          <td><%= link_to 'Edit', edit_diet_path(diet) %></td>
+          <td><%= link_to 'Destroy', diet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

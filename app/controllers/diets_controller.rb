@@ -1,7 +1,6 @@
 class DietsController < ApplicationController
   before_action :set_diet, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
-  
+
   # GET /diets or /diets.json
   def index
     @diets = Diet.all
@@ -15,6 +14,7 @@ class DietsController < ApplicationController
   def new
     @diet = Diet.new
   end
+
   # GET /diets/1/edit
   def edit
   end
@@ -65,6 +65,6 @@ class DietsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def diet_params
       params.require(:diet).permit(:start_date, :final_date, :weight, :height, :ideal_weight,
-        :snacks_attributes => [:id, :snack, :description, :time, :_destroy], :user_attributes => [:user_id])
+      :snacks_attributes => [:id, :snack, :description, :time, :_destroy], :user_attributes => [:user_id])
     end
 end

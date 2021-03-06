@@ -1,33 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to new_snack_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Snack
+  <% end %>
+  <h1>Listing snacks</h1>
+</div>
 
-<h1>Snacks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Snack</th>
-      <th>Time</th>
-      <th>Description</th>
-      <th>Diet</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @snacks.each do |snack| %>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= snack.snack %></td>
-        <td><%= snack.time %></td>
-        <td><%= snack.description %></td>
-        <td><%= snack.diet_id %></td>
-        <td><%= link_to 'Show', snack %></td>
-        <td><%= link_to 'Edit', edit_snack_path(snack) %></td>
-        <td><%= link_to 'Destroy', snack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th>Snack</th>
+            <th>Time</th>
+            <th>Description</th>
+            <th>Diet</th>
+            <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Snack', new_snack_path %>
+    <tbody>
+      <% @snacks.each do |snack| %>
+        <%= content_tag :tr, id: dom_id(snack), class: dom_class(snack) do %>
+                      <td><%= snack.snack %></td>
+                      <td><%= snack.time %></td>
+                      <td><%= snack.description %></td>
+                     
+                    <td><%= link_to 'Show', snack %></td>
+          <td><%= link_to 'Edit', edit_snack_path(snack) %></td>
+          <td><%= link_to 'Destroy', snack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

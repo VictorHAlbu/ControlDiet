@@ -1,6 +1,13 @@
-<h1>Editing Snack</h1>
+<div class="page-header">
+  <%= link_to snacks_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to @snack, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Show
+  <% end %>
+  <h1>Editing snack</h1>
+</div>
 
-<%= render 'form', snack: @snack %>
-
-<%= link_to 'Show', @snack %> |
-<%= link_to 'Back', snacks_path %>
+<%= render 'form' %>

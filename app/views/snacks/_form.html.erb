@@ -1,37 +1,52 @@
-<%= form_with(model: snack, local: true) do |form| %>
-  <% if snack.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(snack.errors.count, "error") %> prohibited this snack from being saved:</h2>
+<%= form_for(@snack, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @snack.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@snack.errors.count, "error") %> prohibited this snack from being saved:</h4>
 
       <ul>
-        <% snack.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+      <% @snack.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :snack %>
-    <%= form.text_field :snack %>
+  <div class="form-group">
+    
+      <%= f.label :snack, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :snack, class: "form-control" %>
+      </div>
+    
   </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.time_select :time %>
+  <div class="form-group">
+    
+      <%= f.label :time, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.time_select :time, class: "form-control" %>
+      </div>
+    
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    
+      <%= f.label :description, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    
   </div>
-
-  <div class="field">
-    <%= form.label :diet_id %>
-    <%= form.text_field :diet_id %>
+  <div class="form-group">
+    
+      <%= f.label :diet, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :diet, class: "form-control" %>
+      </div>
+    
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
