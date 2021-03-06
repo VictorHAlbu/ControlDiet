@@ -1,6 +1,7 @@
 class DietsController < ApplicationController
   before_action :set_diet, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  
   # GET /diets or /diets.json
   def index
     @diets = Diet.all
@@ -14,7 +15,6 @@ class DietsController < ApplicationController
   def new
     @diet = Diet.new
   end
-
   # GET /diets/1/edit
   def edit
   end
