@@ -31,9 +31,10 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/diets">Dieta</a></li>
-          <li><a href="/snacks">Refeições</a></li>
+          <li <% if params["controller"] == "home" %> class="active" <% end %>><a href="/">Home</a></li>
+          <li <% if params["controller"] == "diets" %> class="active" <% end %>><a href="/diets">Dieta</a></li>
+          <li <% if params["controller"] == "snacks" %> class="active" <% end %>><a href="/snacks">Refeições</a></li>
+          <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
