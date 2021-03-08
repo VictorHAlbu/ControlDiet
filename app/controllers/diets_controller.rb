@@ -18,7 +18,7 @@ class DietsController < ApplicationController
   # GET /diets/1/edit
   def edit
   end
-
+  
   # POST /diets or /diets.json
   def create
     @diet = Diet.new(diet_params)
