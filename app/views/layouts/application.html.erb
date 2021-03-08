@@ -34,6 +34,7 @@
           <li <% if params["controller"] == "home" %> class="active" <% end %>><a href="/">Home</a></li>
           <li <% if params["controller"] == "diets" %> class="active" <% end %>><a href="/diets">Dieta</a></li>
           <li <% if params["controller"] == "snacks" %> class="active" <% end %>><a href="/snacks">Refeições</a></li>
+          <li <% if params["controller"] == "graphics" %> class="active" <% end %>><a href="/graphics">Graficos</a></li>
           <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+#pt-br
 br:
   breadcrumbs:
     application:
@@ -10,7 +10,7 @@ br:
   helpers:
     actions: "Ações"
     links:
-      back: "VOltar"
+      back: "Voltar"
       cancel: "Cancelar"
       confirm: "Are you sure?"
       destroy: "Deletar"

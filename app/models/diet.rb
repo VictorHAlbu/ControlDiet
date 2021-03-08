@@ -10,4 +10,23 @@ class Diet < ApplicationRecord
         (self.ideal_weight = weight / (height * height)).round(2)
     end
 
+
+    def classification
+          if self.ideal_weight <= 22
+            return 'Baixo peso'
+          end
+          if self.ideal_weight < 27
+            return 'Peso adequado'
+          end
+
+        if self.ideal_weight < 18.5
+          return 'Baixo peso'
+        end
+        if self.ideal_weight < 25
+          return 'Peso adequado'
+        end
+        return 'Sobrepeso'
+    
+      end
+    
 end

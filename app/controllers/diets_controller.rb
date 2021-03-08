@@ -4,10 +4,12 @@ class DietsController < ApplicationController
   # GET /diets or /diets.json
   def index
     @diets = Diet.all
+    
   end
 
   # GET /diets/1 or /diets/1.json
   def show
+    
   end
 
   # GET /diets/new
@@ -47,14 +49,7 @@ class DietsController < ApplicationController
     end
   end
 
-  # DELETE /diets/1 or /diets/1.json
-  def destroy
-    @diet.destroy
-    respond_to do |format|
-      format.html { redirect_to diets_url, notice: "Diet was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

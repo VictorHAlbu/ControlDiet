@@ -1,4 +1,16 @@
 <div class="page-header">
-  <h1>Graphics#index</h1>
+  <h1>Graphics</h1>
 </div>
-<p>Find me in app/views/graphics/index.html.erb</p>
+<% series = [
+  {peso: "Peso", data: @weight_user},
+] %>
+​
+<% options = {
+  title: 'Users Growth',
+  subtitle: 'Grouped Per Week',
+  xtitle: 'Week',
+  ytitle: 'Users',
+  stacked: true
+} %>
+​
+<%= line_chart(series, options) %>
