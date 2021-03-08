@@ -19,3 +19,5 @@ require("channels")
 require("jquery")
 require("@nathanvda/cocoon")
 import 'cocoon-js'
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts

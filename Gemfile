@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cocoon'
 gem 'cancancan'
+gem 'apexcharts'
+gem 'groupdate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'

@@ -9,4 +9,5 @@ class Diet < ApplicationRecord
     def imc
         (self.ideal_weight = weight / (height * height)).round(2)
     end
+
 end

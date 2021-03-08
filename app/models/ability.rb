@@ -5,7 +5,7 @@ class Ability
 
   def initialize(user)
     if user.present?  
-      canot :read, @Snack, user_id: user.id, Public: false
+      can :read, Diet, user_id: user.id
     end  
   end
 end
